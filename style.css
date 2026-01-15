@@ -1670,3 +1670,44 @@ button:disabled:hover {
   opacity: 0.5;
 }
 
+/* =========================
+   Print Styles for Resume
+   ========================= */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #resume-preview,
+  #resume-preview * {
+    visibility: visible;
+  }
+
+  #resume-preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  header,
+  nav,
+  .form-section,
+  button,
+  .navbar,
+  .header-controls {
+    display: none !important;
+  }
+
+  /* 🔴 IMPORTANT FIX */
+  .drag-handle {
+    display: none !important;
+  }
+
+  .preview-section-block {
+    page-break-inside: avoid;
+    margin-bottom: 16px;
+  }
+}
